@@ -13,6 +13,7 @@ const setRoleRoutes = require('./routes/setRole');
 const forgotPswRoutes = require('./routes/forgot-psw');
 const getDepartmentsRoutes = require('./routes/get-departments');
 
+app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
