@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 8080;
 const cors = require('cors');
 require('dotenv').config();
 const multer = require('multer');
+const path = require('path');
 
 const authRoutes = require('./routes/auth');
 const searchRoutes = require('./routes/search');
