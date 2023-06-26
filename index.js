@@ -13,10 +13,10 @@ const setRoleRoutes = require('./routes/setRole');
 const forgotPswRoutes = require('./routes/forgot-psw');
 const getDepartmentsRoutes = require('./routes/get-departments');
 
-app.use(express.static(path.join(__dirname + "/public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname + "/public")));
 app.use('/auth', authRoutes);
 app.use('/search', searchRoutes);
 app.use('/user-data', userDataRoutes);
@@ -41,6 +41,10 @@ app.post('/upload', upload.single('image'), (req, res) => { // uploads handle
     res.send({
         url: `/public/static/uploads/${req.file.originalname}`
     });
+});
+
+app.get('*', (req, res) =>{
+    res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 app.listen(PORT, (err) => {
