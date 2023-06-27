@@ -18,13 +18,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname + "/public")));
-app.use('/auth', authRoutes);
-app.use('/search', searchRoutes);
-app.use('/user-data', userDataRoutes);
-app.use('/get-user-data', getUserDataRoutes);
-app.use('/set-role', setRoleRoutes);
-app.use('/forgot-psw', forgotPswRoutes);
-app.use('/departments', getDepartmentsRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/auth', authRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/search', searchRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/user-data', userDataRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/get-user-data', getUserDataRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/set-role', setRoleRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/forgot-psw', forgotPswRoutes);
+app.use('https://web-application-members-list-deploy.vercel.app/departments', getDepartmentsRoutes);
 
 const storage = multer.diskStorage({ // multer handler
     destination: (req, file, cb) => {
